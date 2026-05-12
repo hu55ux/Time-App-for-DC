@@ -6,17 +6,17 @@ services:
     restart: always
     ports:
       - '3000:3000'
-    volumes:
-      - /app/node_modules
-      - ./frontend:/app
+    # volumes:
+    #   - /app/node_modules
+    #   - ./frontend:/app
   api:
     build: ./api
     restart: always
     ports:
       - '5000:5000'
-    volumes:
-      - /app/node_modules
-      - ./api:/app
+    # volumes:
+    #   - /app/node_modules
+    #   - ./api:/app
     environment:
       MYSQL_HOST: mysql
       MYSQL_USER: root
