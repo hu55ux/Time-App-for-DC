@@ -39,7 +39,7 @@ jobs:
 
       - name: API image build and push to docker-hub
         run: |
-          docker build -t ${{secrets.DOCKER_USERNAME}}/time_app_FSDM_Oct_24_4_az_api ./api
-          docker push ${{secrets.DOCKER_USERNAME}}/time_app_FSDM_Oct_24_4_az_api
+          docker build -t ${{secrets.DOCKER_USERNAME}}/time_app_fsdm_oct_24_4_az_api ./api
+          docker push ${{secrets.DOCKER_USERNAME}}/time_app_fsdm_oct_24_4_az_api
 
       
