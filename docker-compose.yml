@@ -3,7 +3,7 @@ version: '3'
 services:
   frontend:
     # build: ./frontend
-    image: moguda/timefront
+    image: moguda//time_app_fsdm_oct_24_4_az_front
     restart: always
     ports:
       - '3000:3000'
@@ -12,7 +12,7 @@ services:
     #   - ./frontend:/app
   api:
     # build: ./api
-    image: moguda/timeapi
+    image: moguda//time_app_fsdm_oct_24_4_az_api
     restart: always
     ports:
       - '5000:5000'
