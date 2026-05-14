@@ -81,7 +81,7 @@ jobs:
           port: 22
 
           script: |
-            if [ ! -d "time-app-for-deploy-FSDM_Oct_24_4_az/.git" ]
+            if [ ! -d "time-app-for-deploy-FSDM_Oct_24_4_az/.git" ]; then
             git clone https://github.com/Zamanof/time-app-for-deploy-FSDM_Oct_24_4_az.git
             fi
 
