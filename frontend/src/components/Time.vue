@@ -30,7 +30,7 @@ export default {
   <div class="greetings">
     <h1 class="green">{{ currentTime }}</h1>
     <h3>Verilənlər bazasına yazmaq üçün düyməni bas</h3>
-    <button @click="saveTime">Bilməmək eyib deyil, bilmədiyin bilsə kişi.</button>
+    <button @click="saveTime">Vaxtı qeyd et</button>
     <h3 v-if="savedTimes.length && showSavedTimes">
       Əvvəlcədən qeyd olunmuş vaxtlar:
     </h3>
