@@ -14,12 +14,14 @@ export default defineConfig({
   server: {
     host: '0.0.0.0',
     port: 3000,
+    proxy: {
+      '^/time+s?': {
+        target: 'http://api:5000',
+        changeOrigin: true
+      }
+    },
     watch: {
       usePolling: true,
-    },
-    hmr: {
-      host: 'localhost',
-      port: 3000,
-    },
+    }
   },
 })
