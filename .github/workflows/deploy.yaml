@@ -24,3 +24,6 @@ jobs:
       - name: Install API dependencies
         working-directory: ./api
         run: npm install
+      - name: Run API Unit Tests
+        working-directory: ./api
+        run: npm test
