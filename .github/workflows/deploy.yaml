@@ -14,6 +14,7 @@ jobs:
         os: [ubuntu-latest]
     runs-on: ${{ matrix.os }}
     steps:
+
       - name: Clone repository
         uses: actions/checkout@v4
       
@@ -21,9 +22,23 @@ jobs:
         uses: actions/setup-node@v4
         with:
           node-version: ${{ matrix.node-version }}
+
       - name: Install API dependencies
         working-directory: ./api
         run: npm install
+
       - name: Run API Unit Tests
         working-directory: ./api
         run: npm test
+
+      - name: Install Frontend dependencies
+        working-directory: ./frontend
+        run: npm install
+
+      - name: Docker login
+        run: echo "${{ secrets.DOCKER_PASSWORD }}" | docker login -u "${{ secrets.DOCKER_USERNAME }}" --password-stdin
+        
+      - name : Build and push Docker image
+        run: |
+          docker build -t ${{ secrets.DOCKER_USERNAME }}/time-app-api-cicdtest ./api
+          docker push ${{ secrets.DOCKER_USERNAME }}/time-app-cicdtest
