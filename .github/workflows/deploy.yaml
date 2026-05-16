@@ -1,8 +1,6 @@
 name: CI/CD for time app deployment
-# Bu əmr, CI/CD pipeline-ının adını göstərir.
 
 on:
-  # Bu əmr, CI/CD pipeline-ının hansı hadisələrə tetikleneceğini göstərir.
   push:
     branches: [ "main" ]
   pull_request:
@@ -23,3 +21,6 @@ jobs:
         uses: actions/setup-node@v4
         with:
           node-version: ${{ matrix.node-version }}
+      - name: Install API dependencies
+        working-directory: ./api
+        run: npm install
