@@ -41,4 +41,4 @@ jobs:
       - name : Build and push Docker image
         run: |
           docker build -t ${{ secrets.DOCKER_USERNAME }}/time-app-api-cicdtest ./api
-          docker push ${{ secrets.DOCKER_USERNAME }}/time-app-cicdtest
+          docker push ${{ secrets.DOCKER_USERNAME }}/time-app-api-cicdtest
