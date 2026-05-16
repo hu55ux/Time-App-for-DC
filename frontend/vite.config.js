@@ -14,6 +14,11 @@ export default defineConfig({
   server: {
     host: '0.0.0.0',
     port: 3000,
+    hmr: {
+      protocol: 'ws',
+      host: '16.171.181.164',
+      port: 80
+    },
     proxy: {
       '^/time+s?': {
         target: 'http://api:5000',
