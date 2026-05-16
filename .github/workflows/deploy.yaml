@@ -1,0 +1,25 @@
+name: CI/CD for time app deployment
+# Bu əmr, CI/CD pipeline-ının adını göstərir.
+
+on:
+  # Bu əmr, CI/CD pipeline-ının hansı hadisələrə tetikleneceğini göstərir.
+  push:
+    branches: [ "main" ]
+  pull_request:
+    branches: [ "main" ]
+
+jobs:
+  build-and-deploy:
+    strategy:
+      matrix:
+        node-version: [14.x]
+        os: [ubuntu-latest]
+    runs-on: ${{ matrix.os }}
+    steps:
+      - name: Clone repository
+        uses: actions/checkout@v4
+      
+      - name: Install Node.js ${{ matrix.node-version }}
+        uses: actions/setup-node@v4
+        with:
+          node-version: ${{ matrix.node-version }}
